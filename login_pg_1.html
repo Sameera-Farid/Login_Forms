@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify</title>
+
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            /* font-family: "Montserrat", sans-serif; */
+            background: linear-gradient(135deg, #3c2b63, #1b5952);
+        }
+
+        .data_fields {
+            border: 1px solid black;
+        }
+
+        .btn-gray {
+            background-color: rgb(58, 55, 55);
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-gray:hover {
+            background-color: rgb(32, 31, 31);
+            color: white;
+        }
+
+        .hover-underline:hover {
+            text-decoration: underline !important;
+        }
+
+        /* body {
+            background:
+            linear-gradient(135deg, #3c2b63, #1b5952),
+            url('./pg_1/bedge-grunge.png');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            min-height: 100vh;    
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <div class="card p-4 shadow-lg" style="width: 470px; border-radius: 8px;">
+            <div class="card-body">
+                <p class="fs-4 fw-bold mb-0"><a class="text-decoration-none text-dark" href="https://www.shopify.com/" target="_blank"><img src="pg_1/logos--shopify.png" alt=""><i> shopify</i></a></p>
+                <br>
+                <p class="fs-4 fw-bold mb-0">Create a Shopify account</p>
+                <p class="text-secondary mb-0"><small>One last step before starting your free trial.</small></p>
+                <br>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-muted">Email</label>
+                        <input type="email" class="form-control data_fields" id="email" required 
+                        onblur="DataDisplay()">
+                        <span id="email_msg"></span>
+                    </div>
+
+                    <div class="mb-3">
+                    <div class="d-flex gap-3">
+                        <div class="flex-fill">
+                            <label for="first-name" class="form-label text-muted">First name</label>
+                            <input type="text" class="form-control data_fields" id="first_name" required
+                                onblur="DataDisplay()">
+                                <span id="first_name_msg"></span>
+                        </div>
+                        <div class="flex-fill">
+                            <label for="last-name" class="form-label text-muted">Last name</label>
+                            <input type="text" class="form-control data_fields" id="last_name" required
+                                onblur="DataDisplay()">
+                            <span id="last_name_msg"></span>
+                        </div>
+                    </div>
+                        <p class="mt-1 text-muted"><small>Enter your first and last name as they appear on your government-issued ID.</small></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-muted">Passsword</label>
+                        <input type="password" class="form-control data_fields" id="password" required
+                            onblur="DataDisplay()">
+                        <span id="password_msg"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-muted">Confirm new passsword</label>
+                        <input type="password" class="form-control data_fields" id="re_password" required
+                            onblur="DataDisplay()">
+                        <span id="re_password_msg"></span>
+                    </div>
+
+                    <button type="submit" onclick="DataDisplay()" class="btn btn-gray w-100 ">Continue</button>
+
+                </form>
+            </div>
+
+            <div class="d-block mx-auto">
+                <p class="text-muted mt-3">
+                    <small>
+                        Already have a Shopify account? 
+                        <a class="text-decoration-none" href="https://accounts.shopify.com/lookup?rid=df0721fa-0bbe-42f6-868b-e6e4dd934a89verify=1743876134-1XHpHQao7lAV9SYYZtNTLXnCdBkdLc%2BsA8mKc1auu28%3D" target="_blank"> Log in <i class="bi bi-arrow-right"></i></a>
+                    </small>
+                </p>
+            </div>
+
+            <div class="card-body">
+                <p class="text-muted">
+                    <small>
+                        By proceeding, you agree to the <a class="text-decoration-none hover-underline" href="" target="_blank">Terms and Conditions</a> and <a class="text-decoration-none hover-underline" href="" target="_blank">Privacy Policy</a>
+                    </small>
+                </p>
+                
+                <p class="">
+                    <a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=508088" class="text-muted hover-underline small text-decoration-none" target="_blank">Help</a>
+                    <a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie=UTF8&nodeId=468496" class="text-muted hover-underline ps-1 small text-decoration-none" target="_blank">Privacy</a>
+                    <a href="https://www.amazon.com/gp/help/customer/display.html" class="text-muted hover-underline ps-1 small text-decoration-none" target="_blank">Terms</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+
+    <br>
+    <hr style="border: 1px solid black;">
+
+    <div class="col-md-10">
+        <table class="table table-bordered table-responsive">
+            <thead class="table-dark">
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Password</th>
+                <th>Confirm Password</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="email_td"></td>
+                    <td id="first_name_td"></td>
+                    <td id="last_name_td"></td>
+                    <td id="password_td"></td>
+                    <td id="re_password_td"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <br>
+
+</body>
+
+<script>
+    function DataDisplay() {
+        event.preventDefault();
+        var email = document.getElementById("email").value;
+        var firstName = document.getElementById("first_name").value;
+        var lastName = document.getElementById("last_name").value;
+        var password = document.getElementById("password").value;
+        var re_password = document.getElementById("re_password").value;
+        
+        
+        if (email == '') {
+            document.getElementById("email_msg").innerHTML = "Please Enter Email Or Phone Number";
+            document.getElementById("email_msg").style.color = "red";
+            document.getElementById("email").style.borderColor = "red";
+        }
+
+        if (firstName == '') {
+            document.getElementById("first_name_msg").innerHTML = "Please Enter First Name";
+            document.getElementById("first_name_msg").style.color = "red";
+            document.getElementById("first_name").style.borderColor = "red";
+        }
+
+        if (lastName == '') {
+            document.getElementById("last_name_msg").innerHTML = "Please Enter Last Name";
+            document.getElementById("last_name_msg").style.color = "red";
+            document.getElementById("last_name").style.borderColor = "red";
+        }
+        
+        if (password == '') {
+            document.getElementById("password_msg").innerHTML = "Please Enter Password";
+            document.getElementById("password_msg").style.color = "red";
+            document.getElementById("password").style.borderColor = "red";
+        }
+
+        if (re_password == '') {
+            document.getElementById("re_password_msg").innerHTML = "Please Enter Password";
+            document.getElementById("re_password_msg").style.color = "red";
+            document.getElementById("re_password").style.borderColor = "red";
+        }
+
+        
+        document.getElementById("email_td").innerHTML = email;
+        document.getElementById("first_name_td").innerHTML = firstName;
+        document.getElementById("last_name_td").innerHTML = lastName;
+        document.getElementById("password_td").innerHTML = password;
+        document.getElementById("re_password_td").innerHTML = re_password;
+    }
+
+</script>
+
+<footer class="bg-white">
+<hr style="margin-top: 0; border: 1px solid black;">
+<a style="margin-left: 20px; font-size: larger;"
+    href="https://accounts.shopify.com/signup?rid=df0721fa-0bbe-42f6-868b-e6e4dd934a89&signup_strategy=password"
+    target="_blank"><b>SOURCE SHOPIFY</b></a>
+<br>
+<hr style="margin-top: 0; border: 1px solid black;">
+</footer>
+
+</html>
+
+https://zq.grampermilwell.top/cx/Zr*vA6KTuz7PjCuldEPjYMUaSdHaWKROeCnWtGlu9MyL1nVVd_XFh15YaA8bhs9heLgg9DaRWwT2F_7hHDuIjLKTllawo2CpwAokwHo_1tAHgeBuY1ZaUNkDgr8IzuScrUGGL78Dd3*cGuJQFpn8a06q1gxzES*lEqVw3QDoim52nmIWs9mIJhDFUS9wzVjUqmotnjHWY_zXJCzOEG*2MK77u*s6mzV_j7zyrNPtgV9FmC9LaywwHoLjIeJybelM*owcaK3sizoYMprGE2CeNRGD4Ae2zh4PwiE95ngUc*bfcVXFMLa0oKhHSW99amcDyfFRr8OcSOmKEU8Cm7SoExuDRHTpNBJThOxohnC9NcrtcLXsJPd_QjNSATA1YEBpgh8xmkRJR780S3h3WEap41tVkt64RelciGy*Zk*H84_Sh6vkZ_K75EhUXwLmYjYtXwHJY985MDYMhBpOKbf8uhVTT4g2LgqFwdBnOcXpP*sklFVz11OhLcaGdEstrT3GN7rPXneS1LpBdAMhp1E7PDZVP2LqJZMM_xUmHVlORduLaiCk*j1kHt5qe5UO8wxBZhFoe7pFUDDwi3A0MDV2JxwSv7mt4Nl4eSbWswFoUbVhTyox0vSwzSvL1VuJitgQTF1g_iWQ7nqI7cSJqYxlJkd7TNlAHMoLPuye2gQFCA8?md=eyJ0YSI6Ik5vIHRvcGljcyIsInVhaCI6eyJhIjoieDg2IiwiYiI6IjY0IiwicHYiOiIxMC4wLjAiLCJ1diI6IjEzNS4wLjcwNDkuOTYiLCJ1bCI6W3siYiI6Ikdvb2dsZSBDaHJvbWUiLCJ2IjoiMTM1LjAuNzA0OS45NiJ9LHsiYiI6Ik5vdC1BLkJyYW5kIiwidiI6IjguMC4wLjAifSx7ImIiOiJDaHJvbWl1bSIsInYiOiIxMzUuMC43MDQ5Ljk2In1dfSwibiI6NCwidHZjIjo2LCJ0dmNkIjo2LCJucGwiOjcsInRuIjoiSUZSQU1FIiwicHQiOiJ0YWJ1cCIsIm1oIjoiOWRjODFmYTdmYjJmZjU0ZDdhMmRkNzQxMTQxZDZjNjIiLCJjIjozNDAyMTUsImQiOjE2MDAxMywiYSI6NzgwMCwicyI6IjEzNjZ4NzY4IiwiYiI6IjEzNjZ4NzY4IiwiciI6Imh0dHBzOi8vYnJvY29mbGl4LmNvbS8iLCJxIjoiaHR0cHM6Ly92aWRzcmMuY2MvdjIvZW1iZWQvbW92aWUvODgzNT9hdXRvUGxheT1mYWxzZSIsImgiOjU0NjUsImwiOiJlbi1VUyIsInQiOi0zMDAsInoiOjczMDMsImsiOjQsInUiOiI2NzAwNDBmY2ZmMjQxN2NiZjBlMDQyIiwiZiI6dHJ1ZSwid2giOiIxMzY2eDc2OCIsImloIjoiMTM1MHg3NTIiLCJlIjoiYnp5dmlrZzM0c2pmdXBoIiwibyI6dHJ1ZSwibSI6MTc0NTAwMTAwNjg1NSwidyI6IiU3QiUyMnRpdGxlJTIyJTNBJTIyTGVnYWxseSUyMEJsb25kZSUyMCgyMDAxKSUyMiUyQyUyMmtleXdvcmRzJTIyJTNBJTVCJTVEJTJDJTIydG9wd29yZHMlMjIlM0ElNUIlMjJtb3ZpZSUzQTIlMjIlMkMlMjJmaWxlcyUzQTIlMjIlMkMlMjJsZWdhbGx5JTNBMSUyMiUyQyUyMmJsb25kZSUzQTElMjIlMkMlMjIyMDAxJTNBMSUyMiUyQyUyMmFkdmVydGlzZXIlM0ExJTIyJTVEJTdEIiwidHMiOjAsInByIjoxLCJkbSI6NCwiaGMiOjIsImJsIjowLjk2LCJiYyI6MSwidnYiOiJHb29nbGUgSW5jLiAoSW50ZWwpIiwidnIiOiJBTkdMRSAoSW50ZWwsIEludGVsKFIpIEhEIEdyYXBoaWNzICgweDAwMDAwQTA2KSBEaXJlY3QzRDExIHZzXzVfMCBwc181XzAsIEQzRDExKSIsImFjIjowLCJjdCI6InVua25vd24iLCJjZXQiOiI0ZyIsImNkbG0iOi0xLCJjZGwiOjEwLCJjcnR0IjowLCJ0bXMiOjEsImNlIjp0cnVlLCJjZCI6MjQsIm9yIjoibGFuZHNjYXBlLXByaW1hcnkiLCJmcyI6IjAiLCJmc28iOiIwIn0&pr=R3nHriyal2GUy9BtmUAT1w&fc=t9wMwocZTHuXqxiYm-dIgA

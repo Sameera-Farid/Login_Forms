@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alibaba</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .btn-orange {
+            background-color: orangered;
+            border: none;
+            color: white;
+            border-radius: 0;
+        }
+        .btn-orange:hover {
+            background-color: orangered;
+            color: white;
+        }
+
+        .custom-breadcrumb_1 .breadcrumb-item+.breadcrumb-item::before {
+            content: '|';
+            color: darkgray;
+            padding: 0 8px;
+        }
+
+        .custom-breadcrumb_2 .breadcrumb-item+.breadcrumb-item::before {
+            content: '.';
+            color: darkgray;
+            padding: 0 8px;
+        }
+
+        .hover-underline:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex m-4">
+        <img src="pg_2/simple-icons--alibabadotcom.png" alt="">
+        <a class="text-decoration-none" target="_blank"
+            href="https://www.alibaba.com/?spm=a2700.icbu_pc_register_0326.0.0.271150c8ErbMAW">
+            <h2 style="color: rgb(235, 80, 24);"><b> Alibaba</b>.com </h2>
+        </a>
+        <select style="width: 200px; height: 35px; border-radius: 0;" class="form-select mx-4">
+            <option>English</option>
+            <option>简体中文</option>
+            <option>繁体中文</option>
+            <option>Español</option>
+            <option>Português</option>
+            <option>Deutsch</option>
+            <option>Français</option>
+            <option>Italiano</option>
+            <option>Русский</option>
+            <option>한국어</option>
+            <option>日本語</option>
+            <option>العربية</option>
+            <option>Türk</option>
+            <option>ภาษาไทย</option>
+            <option>tiếng Việt</option>
+            <option>nederlands</option>
+            <option>हिन्दी</option>
+            <option>עברית</option>
+            <option>Bahasa Indonesia</option>
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card p-4 shadow-sm" style="width: 600px;  border-radius: 8px; border: 0;">
+            <div class="card-body">
+                <img class="d-block mx-auto rounded" src="pg_2/delivery.jpg" alt="">
+                <br>
+                <form>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Country / Region:</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" id="country" onblur="DataDisplay()">
+                                <option selected>Pakistan</option>
+                                <option>America</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><span class="text-danger">*</span> Please select trade role </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tradeRole" value="Buyer" id="role" onblur="DataDisplay()">
+                            <label class="form-check-label">Buyer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tradeRole" value="Seller" id="role" onblur="DataDisplay()">
+                            <label class="form-check-label">Seller</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tradeRole" value="Both" id="role" onblur="DataDisplay()">
+                            <label class="form-check-label">Both</label>
+                        </div>
+                        <span id="role_msg"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Email:</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="email"
+                                placeholder="Your email will be set as account name" onblur="DataDisplay()">
+                        </div>
+                        <span id="email_msg"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" placeholder="Set the login password" id="password" onblur="DataDisplay()">
+                        </div>
+                        <span id="password_msg"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Confirm
+                            Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" placeholder="Enter your login password again to continue" id="confirm_password" onblur="DataDisplay()">
+                        </div>
+                        <span id="confirm_password_msg"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Company Name:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Enter your company name here"
+                            id="company_name" onblur="DataDisplay()">
+                        </div>
+                        <span id="company_name_msg"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Full Name:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="first name" id="first_name" onblur="DataDisplay()">
+                            <span id="first_name_msg"></span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="last name" id="last_name" onblur="DataDisplay()">
+                            <span id="last_name_msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Phone Number:</label>
+                        <div class="col">
+                            <input type="number" class="form-control" placeholder="+92" readonly>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" placeholder="area" id="area_code" onblur="DataDisplay()">
+                            <span id="area_code_msg"></span>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" placeholder="Phone Number" id="ph_no" onblur="DataDisplay()">
+                            <span id="ph_no_msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">
+                            I agree to the <a class="text-decoration-none" style="color: orangered;"
+                                href="https://rulechannel.alibaba.com/icbu?spm=a2700.icbu_pc_register_0326.0.0.271150c83dn1yF&type=detail&ruleId=2042&cId=1303#/rule/detail?cId=1303&ruleId=2042"
+                                target="_blank">Free Membership Agreement</a>, <a class="text-decoration-none"
+                                style="color: orangered;"
+                                href="https://rulechannel.alibaba.com/icbu?spm=a2700.icbu_pc_register_0326.0.0.271150c83dn1yF&type=detail&ruleId=2041&cId=1307#/rule/detail?cId=1307&ruleId=2041"
+                                target="_blank">Terms of Use</a>, and <a class="text-decoration-none"
+                                style="color: orangered;"
+                                href="https://rulechannel.alibaba.com/icbu?spm=a2700.icbu_pc_register_0326.0.0.271150c83dn1yF&type=detail&ruleId=2034&cId=1306#/rule/detail?ruleId=2034&cId=1306"
+                                target="_blank">Privacy Policy</a> of Alibaba.com. I also agree to receive more
+                            information about its products and services.
+                        </label>
+                    </div>
+
+                    <button type="submit" onclick="DataDisplay()" class="btn btn-orange">Create an account</button>
+                </form>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="mt-auto text-center bg-body-secondary text-muted">
+        <hr>
+        <div aria-label="breadcrumb ">
+            <ol class="d-flex flex-grow-1 breadcrumb custom-breadcrumb_1 "
+                style=" justify-content: center; padding: 10px 0; font-size: 14px;">
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">AliExpress
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">1688.com
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Tmall Taobao
+                        World</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Alipay</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Lazada Taobao
+                        Global</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">TAO</a>
+                </li>
+            </ol>
+        </div>
+
+        <div aria-label="breadcrumb">
+            <ol class="d-flex flex-grow-1 breadcrumb custom-breadcrumb_2 "
+                style=" justify-content: center; padding: 0; font-size: 14px;">
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Policies and rules
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Legal Notice
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Product Listing
+                        Policy</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Intellectual Property
+                        Protection</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Privacy Policy</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Terms of Use</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" style="text-decoration: none;" class="hover-underline text-muted">Integrity
+                        Compliance</a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="justify-content-center align-items-center text-center d-flex">
+                <p class="px2">© 1999-2025 Alibaba.com</p>
+                <p class="p-2">版权所有:</p>
+                <p class="p-2">杭州阿里巴巴海外信息技术有限公司</p>
+                <p class="p-2">增值电信业务经营许可证:</p>
+                <p class="p-2"><a class="text-decoration-none text-muted"
+                        href="https://beian.mps.gov.cn/?spm=a2700.icbu_pc_register_0326.0.0.271150c8lw0WWG#/query/webSearch?code=33010002000366"
+                        target="_blank">浙公网安备33010002000366</a></p>
+                <p class="p-2"><a class="text-decoration-none text-muted"
+                        href="https://beian.miit.gov.cn/?spm=a2700.icbu_pc_register_0326.0.0.271150c8lw0WWG#/Integrated/index"
+                        target="_blank">浙ICP备2024067534号-3</a>  </p>          
+            </div>
+    </div>
+
+    <br><br>
+
+
+    <div class="col-md-12">
+        <table class="table table-bordered table-responsive">
+            <thead class="table-dark">
+                <th>Country</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Comfirm Password</th>
+                <th>Company Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Area Code</th>
+                <th>Phone Number</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="country_td"></td>
+                    <td id="role_td"></td>
+                    <td id="email_td"></td>
+                    <td id="password_td"></td>
+                    <td id="confirm_password_td"></td>
+                    <td id="company_name_td"></td>
+                    <td id="first_name_td"></td>
+                    <td id="last_name_td"></td>
+                    <td id="area_code_td"></td>
+                    <td id="ph_no_td"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+</body>
+<hr style="margin-top: 0; border: 1px solid black;">
+<a style="margin-left: 20px; font-size: larger;"
+    href="https://login.alibaba.com/reg/union_reg.htm?_regfrom=ICBU_UNION_REG&_regbizsource=main_page&return_url=https%3A%2F%2Fwww.alibaba.com%2F%3Fxp%3D0P0JOGOAtOT9LXBpm40zR9xQyhxn2IMILbAoudlJsJ6I95_M7gC9Xwi7NmB9JChJzS1z0oGhzKZuduL1vqixq1fFYbBBjkkPW-XGAIZigZAsMbeanHAIqwcTEART57S-%26cps_sk%3D4li2dtbh%26bm%3Dcps%26src%3Dsaf%26gclid%3DCj0KCQjw16O_BhDNARIsAC3i2GBzPT-rg119rlVLUppy1eDnWrypm7mfEu6G9vejtPY7E_RKdcHWViAaAsfHEALw_wcB"
+    target="_blank"><b>SOURCE ALIBABA</b></a>
+<br>
+<hr style="margin-top: 0; border: 1px solid black;">
+
+<script>
+    function DataDisplay() {
+        event.preventDefault();
+        var country = document.getElementById("country").value;
+        var city = document.getElementById("role").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+        var companyName = document.getElementById("company_name").value;
+        var firstName = document.getElementById("first_name").value;
+        var lastName = document.getElementById("last_name").value;
+        var areaCode = document.getElementById("area_code").value;
+        var phNo = document.getElementById("ph_no").value;
+
+
+        if (country == '') {
+            document.getElementById("country_msg").innerHTML = "Please Enter Country";
+            document.getElementById("country_msg").style.color = "red";
+            document.getElementById("country").style.borderColor = "red";
+        }
+
+        if (role == '') {
+            document.getElementById("role_msg").innerHTML = "Please Enter Trade Role";
+            document.getElementById("role_msg").style.color = "red";
+            document.getElementById("role").style.borderColor = "red";
+        }
+
+        if (email == '') {
+            document.getElementById("email_msg").innerHTML = "Please Enter Email";
+            document.getElementById("email_msg").style.color = "red";
+            document.getElementById("email").style.borderColor = "red";
+        }
+
+        if (password == '') {
+            document.getElementById("password_msg").innerHTML = "Please Enter Password";
+            document.getElementById("password_msg").style.color = "red";
+            document.getElementById("password").style.borderColor = "red";
+        }
+
+        if (confirmPassword == '') {
+            document.getElementById("confirm_password_msg").innerHTML = "Please Enter Password Again";
+            document.getElementById("confirm_password_msg").style.color = "red";
+            document.getElementById("confirm_password").style.borderColor = "red";
+        }
+
+        if (companyName == '') {
+            document.getElementById("company_name_msg").innerHTML = "Please Enter Company Name";
+            document.getElementById("company_name_msg").style.color = "red";
+            document.getElementById("company_name").style.borderColor = "red";
+        }
+
+        if (firstName == '') {
+            document.getElementById("first_name_msg").innerHTML = "Please Enter First Name";
+            document.getElementById("first_name_msg").style.color = "red";
+            document.getElementById("first_name").style.borderColor = "red";
+        }
+
+        if (lastName == '') {
+            document.getElementById("last_name_msg").innerHTML = "Please Enter Last Name";
+            document.getElementById("last_name_msg").style.color = "red";
+            document.getElementById("last_name").style.borderColor = "red";
+        }
+
+        if (areaCode == '') {
+            document.getElementById("area_code_msg").innerHTML = "Please Enter Area Code";
+            document.getElementById("area_code_msg").style.color = "red";
+            document.getElementById("area_code").style.borderColor = "red";
+        }
+       
+
+        if (phNo == '') {
+            document.getElementById("ph_no_msg").innerHTML = "Please Enter Phone Number";
+            document.getElementById("ph_no_msg").style.color = "red";
+            document.getElementById("ph_no").style.borderColor = "red";
+        }
+
+
+        document.getElementById("country_td").innerHTML = country;
+        document.getElementById("role_td").innerHTML = role;
+        document.getElementById("email_td").innerHTML = email;
+        document.getElementById("password_td").innerHTML = password;
+        document.getElementById("confirm_password_td").innerHTML = confirmPassword;
+        document.getElementById("company_name_td").innerHTML = companyName;
+        document.getElementById("first_name_td").innerHTML = firstName;
+        document.getElementById("last_name_td").innerHTML = lastName;
+        document.getElementById("area_code_td").innerHTML = areaCode;
+        document.getElementById("ph_no_td").innerHTML = phNo;
+    }
+
+</script>
+
+</html>
